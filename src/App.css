@@ -216,20 +216,135 @@ li:hover {
 
 @media (max-width: 768px) {
   .App {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .pitch-header {
-    padding: 3rem 0;
+    padding: 2rem 0;
+  }
+
+  .pitch-header h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
   }
 
   .content-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 1rem 0;
   }
 
   .section-card {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .executive-summary {
+    margin: 1rem 0 2rem 0;
+  }
+
+  .symbol {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .highlight-card {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .highlight-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .highlight-card li {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  li {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  ul ul {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Improve touch targets */
+  li, button {
+    padding: 0.5rem 0;
+    min-height: 44px; /* Apple's recommended minimum */
+  }
+
+  /* Reduce floating symbols for better performance */
+  .floating-symbols {
+    display: none; /* or reduce number of symbols */
+  }
+
+  /* Add momentum scrolling */
+  .App {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Optimize animations for mobile */
+  .section-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Adjust spacing for better readability */
+  .section-card + .section-card {
+    margin-top: 1rem;
+  }
+}
+
+/* Add specific iPad/tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .App {
     padding: 2rem;
+  }
+
+  .highlight-card {
+    grid-column: span 2;
+  }
+}
+
+/* Add landscape mode optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  .pitch-header {
+    padding: 1rem 0;
+  }
+
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlight-card {
+    grid-column: span 2;
+  }
+}
+
+/* Add safe area insets for notched phones */
+@supports (padding: max(0px)) {
+  .App {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 }
 

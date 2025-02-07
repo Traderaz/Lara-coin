@@ -1,0 +1,425 @@
+:root {
+  --primary-black: #0a0a0a;
+  --secondary-black: #141414;
+  --accent-gold: #b3a369;
+  --text-white: #ffffff;
+  --text-gray: #a0a0a0;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --font-primary: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, 
+    rgba(10, 10, 10, 0.95) 0%, 
+    rgba(20, 20, 20, 0.95) 100%
+  );
+  color: var(--text-white);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 4rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.pitch-header {
+  padding: 6rem 0;
+  text-align: left;
+  max-width: 1000px;
+  animation: fadeIn 1s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.pitch-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, var(--accent-gold), #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateY(20px);
+  animation: slideUp 1s ease-out forwards;
+}
+
+.subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--text-gray);
+  max-width: 600px;
+  transform: translateY(20px);
+  animation: slideUp 1s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+/* Executive Summary */
+.executive-summary {
+  margin: 2rem 0 6rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.executive-summary .section-card {
+  background: linear-gradient(135deg, rgba(179, 163, 105, 0.1), rgba(179, 163, 105, 0.02));
+  border-left: 4px solid var(--accent-gold);
+  transform: translateY(20px);
+  animation: slideUp 1s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* Grid Layout */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card Styles */
+.section-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  transform: scaleX(0);
+  transition: transform 0.6s ease;
+}
+
+.section-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-card:hover {
+  background: rgba(179, 163, 105, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.section-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Typography */
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 2px;
+  background: var(--accent-gold);
+  opacity: 0.5;
+  transition: width 0.3s ease;
+}
+
+.section-card:hover h2::after {
+  width: 100px;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+ul ul {
+  margin-left: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 1.2rem;
+  color: var(--text-gray);
+  font-size: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.section-card:hover li {
+  color: var(--text-white);
+}
+
+li:hover {
+  transform: translateX(5px);
+  color: var(--accent-gold);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .content-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 2rem;
+  }
+
+  .pitch-header {
+    padding: 3rem 0;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-card {
+    padding: 2rem;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4b17a;
+}
+
+/* Additional Animations */
+.section-card {
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.section-card.visible {
+  animation-play-state: running;
+}
+
+/* Emoji Animations */
+li:hover emoji {
+  display: inline-block;
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+/* Specific Section Styling */
+.vision li,
+.market-opportunity li,
+.roadmap li {
+  font-weight: 500;
+}
+
+.roadmap ul ul li {
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+/* Utility Classes */
+.text-accent {
+  color: var(--accent-gold);
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+/* Focus States */
+.section-card:focus-within {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+/* Add these new styles to your existing CSS */
+
+.floating-symbols {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.symbol {
+  position: absolute;
+  color: rgba(179, 163, 105, 0.2);
+  font-size: clamp(2rem, 5vw, 4rem);
+  animation: float 15s linear infinite;
+  opacity: 0;
+  text-shadow: 0 0 15px rgba(179, 163, 105, 0.3);
+}
+
+/* Position symbols at different starting points */
+.symbol:nth-child(1) { left: 10%; animation-delay: 0s; }
+.symbol:nth-child(2) { left: 20%; animation-delay: 2s; }
+.symbol:nth-child(3) { left: 30%; animation-delay: 4s; }
+.symbol:nth-child(4) { left: 40%; animation-delay: 6s; }
+.symbol:nth-child(5) { left: 50%; animation-delay: 8s; }
+.symbol:nth-child(6) { left: 60%; animation-delay: 10s; }
+.symbol:nth-child(7) { left: 70%; animation-delay: 12s; }
+.symbol:nth-child(8) { left: 80%; animation-delay: 14s; }
+.symbol:nth-child(9) { left: 90%; animation-delay: 16s; }
+.symbol:nth-child(10) { left: 15%; animation-delay: 18s; }
+.symbol:nth-child(11) { left: 25%; animation-delay: 20s; }
+.symbol:nth-child(12) { left: 35%; animation-delay: 22s; }
+
+/* Different sizes for variety */
+.symbol:nth-child(odd) { 
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+.symbol:nth-child(3n) { 
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Add hover effect for symbols */
+.symbol:hover {
+  color: rgba(179, 163, 105, 0.6);
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+/* Ensure the main content stays above the floating symbols */
+.pitch-header,
+.executive-summary,
+.content-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add these styles to your existing CSS */
+
+.highlight-card {
+  background: linear-gradient(135deg, rgba(179, 163, 105, 0.15), rgba(179, 163, 105, 0.05));
+  border: 2px solid var(--accent-gold);
+  grid-column: 1 / -1;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.highlight-card h2 {
+  color: var(--accent-gold);
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.highlight-card h2::after {
+  width: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.highlight-card ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.highlight-card li {
+  font-size: 1.2rem;
+  color: var(--text-white);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(179, 163, 105, 0.2);
+  background: linear-gradient(135deg, rgba(179, 163, 105, 0.2), rgba(179, 163, 105, 0.1));
+}
+
+@media (max-width: 768px) {
+  .highlight-card ul {
+    grid-template-columns: 1fr;
+  }
+  
+  .highlight-card li {
+    font-size: 1.1rem;
+  }
+}
+

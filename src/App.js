@@ -86,7 +86,6 @@ function App() {
         <div className="section-card partnerships">
           <h2>PARTNERSHIPS & COLLABORATIONS</h2>
           <ul>
-            <li>🤝 Music Industry Alliances: Major labels & streaming platforms</li>
             <li>💎 Strategic Investors: Leading crypto & entertainment firms</li>
             <li>🎨 Entertainment Integration: Concert venues, festivals & media</li>
           </ul>

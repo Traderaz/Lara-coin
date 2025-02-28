@@ -57,7 +57,7 @@ function App() {
         <div className="section-card vision">
           <h2>THE BIG IDEA</h2>
           <ul>
-            <li>🎵 First trap icon-backed crypto token</li>
+            <li>🎵 First hip-hop icon-backed crypto token</li>
             <li>🌍 Bridges hip-hop culture and decentralized finance</li>
             <li>💰 Empowers global fans with exclusive 2Chainz experiences</li>
           </ul>
@@ -66,7 +66,7 @@ function App() {
         <div className="section-card strategy">
           <h2>MARKET STRATEGIES</h2>
           <ul>
-            <li>🔥 Tease & Hype: 2Chainz announces "True to crypto, true to the trap"</li>
+            <li>🔥 Tease & Hype: 2Chainz announces "True to crypto, true to the culture"</li>
             <li>📈 Liquidity Lock: Ensuring price stability and investor confidence</li>
             <li>💬 Community-Driven: Exclusive Discord & Telegram communities</li>
             <li>📱 Viral Platforms: Leveraging Instagram, TikTok & X for massive reach</li>
@@ -115,7 +115,7 @@ function App() {
           <h2>VIRAL STRATEGY</h2>
           <ul>
             <li>📣 #2ChainzToken: The official launch hashtag</li>
-            <li>🔥 Trap Challenge: Community-driven engagement campaign</li>
+            <li>🔥 Rap Challenge: Community-driven engagement campaign</li>
             <li>🎥 Premium Content: High-quality visuals & exclusive drops</li>
           </ul>
         </div>

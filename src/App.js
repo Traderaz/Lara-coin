@@ -26,32 +26,31 @@ function App() {
   return (
     <div className="App">
       <div className="floating-symbols">
-        {/* Crypto Symbols */}
+        {/* Crypto & Music Symbols */}
         <span className="symbol">₿</span>
         <span className="symbol">Ξ</span>
         <span className="symbol">₮</span>
         <span className="symbol">Ł</span>
-        {/* Music Symbols */}
         <span className="symbol">♪</span>
         <span className="symbol">♫</span>
         <span className="symbol">𝄞</span>
         <span className="symbol">𝄢</span>
-        {/* Additional Symbols */}
-        <span className="symbol">Y</span>
+        <span className="symbol">A</span>
         <span className="symbol">$</span>
         <span className="symbol">♯</span>
         <span className="symbol">♭</span>
       </div>
+
       <div className="pitch-header">
-        <h1>YE COIN - VISION & STRATEGY</h1>
-        <p className="subtitle">Revolutionizing the intersection of culture and cryptocurrency</p>
+        <h1>ASHANTI TOKEN</h1>
+        <p className="subtitle">The First R&B Queen-Backed Digital Currency</p>
       </div>
 
       <div className="executive-summary">
         <div className="section-card summary">
           <h2>EXECUTIVE SUMMARY</h2>
-          <p>A groundbreaking cryptocurrency initiative that merges Ye's cultural influence with blockchain technology, 
-             creating an ecosystem where fans can participate in and benefit from the future of digital finance and creative commerce.</p>
+          <p>A revolutionary cryptocurrency that combines Ashanti's iconic R&B legacy with blockchain technology, 
+             creating a unique ecosystem where fans can connect with the future of music and digital finance.</p>
         </div>
       </div>
 
@@ -59,37 +58,37 @@ function App() {
         <div className="section-card vision">
           <h2>THE BIG IDEA</h2>
           <ul>
-            <li>🎵 First culture-driven lifestyle crypto token</li>
-            <li>🌍 Bridges music, fashion, and decentralised finance</li>
-            <li>💰 Empowers global fans with exclusive access</li>
+            <li>🎵 First R&B legend-backed crypto token</li>
+            <li>🌍 Bridges music, entertainment, and decentralized finance</li>
+            <li>💰 Empowers global fans with exclusive Ashanti experiences</li>
           </ul>
         </div>
 
         <div className="section-card strategy">
           <h2>MARKET STRATEGIES</h2>
           <ul>
-            <li>🔥 Tease & Hype: Ye drops a cryptic tweet like "The future is independent. Ye Coin coming."</li>
+            <li>🔥 Tease & Hype: Ashanti announces "The future of R&B meets crypto"</li>
             <li>📈 Liquidity Lock: Ensuring price stability and investor confidence</li>
-            <li>💬 Community-Driven: Exclusive Twitter Spaces, Telegram & Discord chats</li>
-            <li>📱 Viral Platforms: Leveraging X, TikTok, Instagram for massive adoption</li>
+            <li>💬 Community-Driven: Exclusive Discord & Telegram communities</li>
+            <li>📱 Viral Platforms: Leveraging Instagram, TikTok & X for massive reach</li>
           </ul>
         </div>
 
         <div className="section-card revenue">
           <h2>REVENUE POTENTIAL</h2>
           <ul>
-            <li>🏦 DEX Market Maker: Building a self-sustaining token economy</li>
-            <li>📊 Growth Strategy: More adoption = increased token value</li>
-            <li>💸 Token Utility: Community staking rewards & premium access to Ye-related projects</li>
+            <li>🏦 DEX Market Maker: Building a sustainable token economy</li>
+            <li>📊 Growth Strategy: Fan engagement drives token value</li>
+            <li>💸 Token Utility: Access to exclusive music, events & merchandise</li>
           </ul>
         </div>
 
         <div className="section-card partnerships">
           <h2>PARTNERSHIPS & COLLABORATIONS</h2>
           <ul>
-            <li>🤝 Crypto & Web3 Collaborations: Working with blockchain pioneers & DeFi platforms</li>
-            <li>💎 Strategic Investors: Backed by top-tier fintech leaders & private investors</li>
-            <li>🎨 Fashion & Music Integration: Ye Coin connects with Yeezy, Donda & creative brands</li>
+            <li>🤝 Music Industry Alliances: Major labels & streaming platforms</li>
+            <li>💎 Strategic Investors: Leading crypto & entertainment firms</li>
+            <li>🎨 Entertainment Integration: Concert venues, festivals & media</li>
           </ul>
         </div>
 
@@ -98,18 +97,18 @@ function App() {
           <ul>
             <li>⏳ Pre-Launch:</li>
             <ul>
-              <li>• Ye's teaser tweet: "The future is independent. Ye Coin coming."</li>
-              <li>• Social media hype campaign led by influencers & cultural icons</li>
+              <li>• Ashanti's announcement: "R&B meets Web3 - get ready"</li>
+              <li>• Influencer campaign with music industry leaders</li>
             </ul>
             <li>🚀 Launch Day:</li>
             <ul>
-              <li>• Official announcement across Ye's channels</li>
-              <li>• Community activation with exclusive giveaways & perks</li>
+              <li>• Global announcement across all platforms</li>
+              <li>• Exclusive fan rewards activation</li>
             </ul>
             <li>📢 Post-Launch:</li>
             <ul>
-              <li>• Ongoing engagement via Twitter, Instagram & Discord</li>
-              <li>• Exclusive access for token holders to future Ye projects</li>
+              <li>• Regular community events & token holder benefits</li>
+              <li>• Exclusive access to new music & content</li>
             </ul>
           </ul>
         </div>
@@ -117,9 +116,9 @@ function App() {
         <div className="section-card viral">
           <h2>VIRAL STRATEGY</h2>
           <ul>
-            <li>📣 #YeCoin: The official launch hashtag</li>
-            <li>🔥 Challenge Campaign: Fan-driven engagement to push token awareness</li>
-            <li>🎥 Hype Videos & Influencer Endorsements: High-quality content showcasing the project</li>
+            <li>📣 #AshantiToken: The official launch hashtag</li>
+            <li>🔥 R&B Community Challenge: Fan engagement campaign</li>
+            <li>🎥 Premium Content: High-quality visuals & exclusive drops</li>
           </ul>
         </div>
 
@@ -128,30 +127,18 @@ function App() {
           <ul>
             <li>🎯 Combined Market Potential:</li>
             <li>• Global Cryptocurrency Market: $2T+</li>
-            <li>• Fashion & Streetwear: $50B+</li>
             <li>• Music Industry: $26B+</li>
-            <li>• NFT Market: $31B</li>
+            <li>• Digital Collectibles: $31B</li>
+            <li>• R&B Streaming Market: $2B+</li>
           </ul>
         </div>
 
         <div className="section-card next-steps">
           <h2>NEXT STEPS</h2>
           <ul>
-            <li>🎨 Finalize Visual Identity: Align with Ye's branding & luxury aesthetic</li>
-            <li>📄 Develop Website & Whitepaper: Provide clear utility & roadmap</li>
-            <li>📢 Community Building: Drive early adoption via social media, PR & strategic partnerships</li>
-          </ul>
-        </div>
-
-        <div className="section-card offer highlight-card">
-          <h2>OUR GUARANTEE</h2>
-          <ul>
-            <li>💰 $20 Million Initial Guarantee</li>
-            <li>🤝 Strategic Partnerships with Top Crypto Exchanges</li>
-            <li>🌐 Extensive Network of Crypto Market Makers</li>
-            <li>🚀 Dedicated Marketing Budget for Global Reach</li>
-            <li>⚡ Fast-Track Listing on Major Platforms</li>
-            <li>🔒 Long-term Value Protection Strategy</li>
+            <li>🎨 Finalize Brand Identity: Align with Ashanti's iconic style</li>
+            <li>📄 Develop Platform & Whitepaper: Clear roadmap & utility</li>
+            <li>📢 Launch Strategy: Coordinated PR & entertainment industry push</li>
           </ul>
         </div>
       </div>

@@ -1,12 +1,12 @@
 :root {
   --primary-black: #0a0a0a;
   --secondary-black: #141414;
-  --accent-color: #FFD700; /* Gold */
-  --accent-gradient: linear-gradient(135deg, #FFD700, #FFA500); /* Gold to orange */
+  --accent-color: #1E90FF; /* Dodger Blue */
+  --accent-gradient: linear-gradient(135deg, #1E90FF, #00BFFF); /* Blue to Deep Sky Blue */
   --text-white: #ffffff;
   --text-gray: #a0a0a0;
-  --card-bg: rgba(255, 215, 0, 0.03);
-  --card-border: rgba(255, 215, 0, 0.1);
+  --card-bg: rgba(30, 144, 255, 0.03);
+  --card-border: rgba(30, 144, 255, 0.1);
   --font-primary: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -73,7 +73,7 @@ body {
 }
 
 .executive-summary .section-card {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.02));
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(30, 144, 255, 0.02));
   border-left: 4px solid var(--accent-color);
   transform: translateY(20px);
   animation: slideUp 1s ease-out 0.4s forwards;
@@ -111,9 +111,13 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-  transform: scaleX(0);
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(30, 144, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-100%);
   transition: transform 0.6s ease;
 }
 
@@ -123,12 +127,12 @@ body {
 }
 
 .section-card:hover {
-  background: rgba(255, 215, 0, 0.05);
-  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.1);
+  background: rgba(30, 144, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(30, 144, 255, 0.1);
 }
 
 .section-card:hover::before {
-  transform: scaleX(1);
+  transform: translateX(100%);
 }
 
 /* Typography */
@@ -363,7 +367,7 @@ li:hover {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FFA500;
+  background: #00BFFF;
 }
 
 /* Additional Animations */
@@ -425,11 +429,11 @@ li:hover emoji {
 
 .symbol {
   position: absolute;
-  color: rgba(255, 215, 0, 0.2);
+  color: rgba(30, 144, 255, 0.2);
   font-size: clamp(2rem, 5vw, 4rem);
   animation: float 15s linear infinite;
   opacity: 0;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  text-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
 }
 
 /* Position symbols at different starting points */
@@ -473,7 +477,7 @@ li:hover emoji {
 
 /* Add hover effect for symbols */
 .symbol:hover {
-  color: rgba(255, 215, 0, 0.6);
+  color: rgba(30, 144, 255, 0.6);
   transform: scale(1.2);
   transition: all 0.3s ease;
 }
@@ -489,7 +493,7 @@ li:hover emoji {
 /* Add these styles to your existing CSS */
 
 .highlight-card {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.15), rgba(30, 144, 255, 0.05));
   border: 2px solid var(--accent-color);
   grid-column: 1 / -1;
   max-width: 800px;
@@ -524,8 +528,8 @@ li:hover emoji {
 
 .highlight-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+  box-shadow: 0 20px 40px rgba(30, 144, 255, 0.2);
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.2), rgba(30, 144, 255, 0.1));
 }
 
 @media (max-width: 768px) {
@@ -536,5 +540,61 @@ li:hover emoji {
   .highlight-card li {
     font-size: 1.1rem;
   }
+}
+
+/* Add subtle blue glow to cards */
+.section-card:hover {
+  box-shadow: 0 20px 40px rgba(30, 144, 255, 0.15);
+  border-color: rgba(30, 144, 255, 0.2);
+}
+
+/* Update symbol glow */
+.symbol {
+  text-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+}
+
+/* Add ocean-like wave effect to cards */
+.section-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(30, 144, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.section-card:hover::before {
+  transform: translateX(100%);
+}
+
+/* Add subtle water ripple effect */
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.section-card:hover::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(30, 144, 255, 0.1);
+  transform: translate(-50%, -50%);
+  animation: ripple 1s ease-out;
 }
 

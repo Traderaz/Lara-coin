@@ -48,7 +48,7 @@ function App() {
       <div className="executive-summary">
         <div className="section-card summary">
           <h2>EXECUTIVE SUMMARY</h2>
-          <p>A groundbreaking cryptocurrency that combines 2Chainz's entrepreneurial success with blockchain innovation, 
+          <p>A ground breaking cryptocurrency that combines 2Chainz's entrepreneurial success with blockchain innovation, 
              creating a unique ecosystem where fans can participate in the future of music and digital finance.</p>
         </div>
       </div>

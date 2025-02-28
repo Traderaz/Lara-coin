@@ -42,7 +42,7 @@ function App() {
 
       <div className="pitch-header">
         <h1>2CHAINZ TOKEN</h1>
-        <p className="subtitle">The Ultimate Hip-Hop Meets Crypto Revolution</p>
+        <p className="subtitle">The Ultimate Hip-Hop/Rap Meets Crypto Revolution</p>
       </div>
 
       <div className="executive-summary">
@@ -57,8 +57,8 @@ function App() {
         <div className="section-card vision">
           <h2>THE BIG IDEA</h2>
           <ul>
-            <li>🎵 First hip-hop icon-backed crypto token</li>
-            <li>🌍 Bridges hip-hop culture and decentralized finance</li>
+            <li>🎵 First hip-hop/rap icon-backed crypto token</li>
+            <li>🌍 Bridges hip-hop/rap culture and decentralized finance</li>
             <li>💰 Empowers global fans with exclusive 2Chainz experiences</li>
           </ul>
         </div>
@@ -66,7 +66,7 @@ function App() {
         <div className="section-card strategy">
           <h2>MARKET STRATEGIES</h2>
           <ul>
-            <li>🔥 Tease & Hype: 2Chainz announces "True to crypto, true to hip-hop"</li>
+            <li>🔥 Tease & Hype: 2Chainz announces "True to crypto, true to hip-hop/rap"</li>
             <li>📈 Liquidity Lock: Ensuring price stability and investor confidence</li>
             <li>💬 Community-Driven: Exclusive Discord & Telegram communities</li>
             <li>📱 Viral Platforms: Leveraging Instagram, TikTok & X for massive reach</li>
@@ -96,7 +96,7 @@ function App() {
             <li>⏳ Pre-Launch:</li>
             <ul>
               <li>• 2Chainz announcement: "Blockchain got me feeling blessed"</li>
-              <li>• Influencer campaign with hip-hop community leaders</li>
+              <li>• Influencer campaign with hip-hop/rap community leaders</li>
             </ul>
             <li>🚀 Launch Day:</li>
             <ul>
@@ -125,7 +125,7 @@ function App() {
           <ul>
             <li>🎯 Combined Market Potential:</li>
             <li>• Global Cryptocurrency Market: $2T+</li>
-            <li>• Hip-Hop Industry: $15.7B+</li>
+            <li>• Hip-Hop/Rap Industry: $15.7B+</li>
             <li>• Digital Collectibles: $31B</li>
             <li>• Rap Streaming Market: $3B+</li>
           </ul>

@@ -50,28 +50,17 @@ body {
   font-size: 3.5rem;
   margin-bottom: 20px;
   background: linear-gradient(45deg, 
-    #FF6666 0%, 
-    #FF6666 30%, 
+    #FF0000 0%, 
+    #FF0000 30%, 
     #FFFFFF 45%, 
     #FFFFFF 55%, 
-    #6666FF 70%, 
-    #6666FF 100%
+    #0000FF 70%, 
+    #0000FF 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-weight: 900;
   letter-spacing: 2px;
-  animation: titleGlow 2s infinite alternate;
-}
-
-@keyframes titleGlow {
-  from {
-    filter: drop-shadow(0 0 2px rgba(255, 77, 77, 0.5)) drop-shadow(0 0 2px rgba(77, 77, 255, 0.5));
-  }
-  to {
-    filter: drop-shadow(0 0 6px rgba(255, 77, 77, 0.7)) drop-shadow(0 0 6px rgba(77, 77, 255, 0.7));
-  }
 }
 
 .subtitle {
@@ -153,36 +142,31 @@ body {
   color: #0000FF;
 }
 
+.floating-symbols {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
 .symbol {
   position: absolute;
-  font-size: 2.5rem;
-  opacity: 0.15;
+  font-size: 3rem;
+  opacity: 0.2;
   pointer-events: none;
   animation: float 20s infinite ease-in-out;
   z-index: 0;
-  color: #FF6666;
+  color: #FF0000;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .symbol:nth-child(even) {
-  color: #6666FF;
-}
-
-.symbol:hover {
-  opacity: 0.4;
-  transform: scale(1.2);
-  transition: all 0.3s ease;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
+  color: #0000FF;
+  text-shadow: 0 0 10px rgba(0, 0, 255, 0.3);
 }
 
 /* Position symbols at different starting points */
@@ -202,7 +186,27 @@ body {
 .symbol:nth-child(14) { top: 45%; right: 70%; animation-delay: -13s; }
 .symbol:nth-child(15) { top: 55%; left: 75%; animation-delay: -14s; }
 
-/* Responsive Design */
+/* Different sizes for variety */
+.symbol:nth-child(odd) { 
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+.symbol:nth-child(3n) { 
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Mobile-optimized positions */
 @media (max-width: 768px) {
   .pitch-header h1 {
     font-size: 2.5rem;
@@ -223,8 +227,41 @@ body {
   .section-card ul li {
     font-size: 1rem;
   }
+
+  .symbol {
+    font-size: 1.8rem;
+    opacity: 0.3;
+    animation: floatMobile 15s infinite ease-in-out;
+  }
+
+  /* Show fewer symbols on mobile */
+  .symbol:nth-child(n+7) {
+    display: none;
+  }
+
+  /* Optimize positions for remaining symbols */
+  .symbol:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+  .symbol:nth-child(2) { top: 30%; right: 15%; animation-delay: -3s; }
+  .symbol:nth-child(3) { top: 50%; left: 20%; animation-delay: -6s; }
+  .symbol:nth-child(4) { top: 70%; right: 25%; animation-delay: -9s; }
+  .symbol:nth-child(5) { top: 85%; left: 15%; animation-delay: -12s; }
+  .symbol:nth-child(6) { top: 25%; right: 10%; animation-delay: -15s; }
+
+  /* Simplified animation for better performance on mobile */
+  @keyframes floatMobile {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(0, -10px) rotate(5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
 }
 
+/* Extra small devices */
 @media (max-width: 480px) {
   .pitch-header h1 {
     font-size: 2rem;
@@ -245,6 +282,22 @@ body {
   .section-card ul li {
     font-size: 0.9rem;
   }
+
+  .symbol {
+    font-size: 1.5rem;
+    opacity: 0.25;
+  }
+
+  /* Show even fewer symbols on very small screens */
+  .symbol:nth-child(n+5) {
+    display: none;
+  }
+
+  /* Adjust positions for better visibility */
+  .symbol:nth-child(1) { top: 15%; left: 15%; }
+  .symbol:nth-child(2) { top: 45%; right: 20%; }
+  .symbol:nth-child(3) { top: 75%; left: 25%; }
+  .symbol:nth-child(4) { top: 35%; right: 15%; }
 }
 
 /* Grid Layout */
@@ -423,38 +476,6 @@ li:hover {
     margin: 1rem 0 2rem 0;
   }
 
-  .symbol {
-    font-size: 1.8rem;
-    opacity: 0.3;
-    animation: floatMobile 15s infinite ease-in-out;
-  }
-
-  /* Show fewer symbols on mobile */
-  .symbol:nth-child(n+7) {
-    display: none;
-  }
-
-  /* Optimize positions for remaining symbols */
-  .symbol:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-  .symbol:nth-child(2) { top: 30%; right: 15%; animation-delay: -3s; }
-  .symbol:nth-child(3) { top: 50%; left: 20%; animation-delay: -6s; }
-  .symbol:nth-child(4) { top: 70%; right: 25%; animation-delay: -9s; }
-  .symbol:nth-child(5) { top: 85%; left: 15%; animation-delay: -12s; }
-  .symbol:nth-child(6) { top: 25%; right: 10%; animation-delay: -15s; }
-
-  /* Simplified animation for better performance on mobile */
-  @keyframes floatMobile {
-    0% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    50% {
-      transform: translate(0, -10px) rotate(5deg);
-    }
-    100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-  }
-
   .highlight-card {
     padding: 1.5rem;
     margin: 1rem 0;
@@ -483,11 +504,6 @@ li:hover {
   li, button {
     padding: 0.5rem 0;
     min-height: 44px; /* Apple's recommended minimum */
-  }
-
-  /* Reduce floating symbols for better performance */
-  .floating-symbols {
-    display: none; /* or reduce number of symbols */
   }
 
   /* Add momentum scrolling */
@@ -609,302 +625,30 @@ li:hover emoji {
   outline-offset: 2px;
 }
 
-/* Add these new styles to your existing CSS */
-
-.floating-symbols {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.symbol {
-  position: absolute;
-  font-size: 3rem;
-  opacity: 0.2;
-  pointer-events: none;
-  animation: float 20s infinite ease-in-out;
-  z-index: 0;
-  color: #FF6666;
-  text-shadow: 0 0 10px rgba(255, 102, 102, 0.3);
-}
-
-.symbol:nth-child(even) {
-  color: #6666FF;
-  text-shadow: 0 0 10px rgba(102, 102, 255, 0.3);
-}
-
-.symbol:hover {
-  opacity: 0.5;
-  transform: scale(1.2);
-  transition: all 0.3s ease;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-}
-
-/* Position symbols at different starting points */
-.symbol:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
-.symbol:nth-child(2) { top: 15%; right: 10%; animation-delay: -1s; }
-.symbol:nth-child(3) { top: 25%; left: 15%; animation-delay: -2s; }
-.symbol:nth-child(4) { top: 35%; right: 20%; animation-delay: -3s; }
-.symbol:nth-child(5) { top: 45%; left: 25%; animation-delay: -4s; }
-.symbol:nth-child(6) { top: 55%; right: 30%; animation-delay: -5s; }
-.symbol:nth-child(7) { top: 65%; left: 35%; animation-delay: -6s; }
-.symbol:nth-child(8) { top: 75%; right: 40%; animation-delay: -7s; }
-.symbol:nth-child(9) { top: 85%; left: 45%; animation-delay: -8s; }
-.symbol:nth-child(10) { top: 95%; right: 50%; animation-delay: -9s; }
-.symbol:nth-child(11) { top: 15%; left: 55%; animation-delay: -10s; }
-.symbol:nth-child(12) { top: 25%; right: 60%; animation-delay: -11s; }
-.symbol:nth-child(13) { top: 35%; left: 65%; animation-delay: -12s; }
-.symbol:nth-child(14) { top: 45%; right: 70%; animation-delay: -13s; }
-.symbol:nth-child(15) { top: 55%; left: 75%; animation-delay: -14s; }
-
-/* Different sizes for variety */
-.symbol:nth-child(odd) { 
-  font-size: clamp(3rem, 6vw, 5rem);
-}
-.symbol:nth-child(3n) { 
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.5;
-  }
-  90% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(-100px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* Add hover effect for symbols */
-.symbol:hover {
-  color: rgba(30, 144, 255, 0.6);
-  transform: scale(1.2);
-  transition: all 0.3s ease;
-}
-
-/* Ensure the main content stays above the floating symbols */
-.pitch-header,
-.executive-summary,
-.content-grid {
-  position: relative;
-  z-index: 1;
-}
-
-/* Add these styles to your existing CSS */
-
-.highlight-card {
-  background: linear-gradient(135deg, rgba(30, 144, 255, 0.15), rgba(30, 144, 255, 0.05));
-  border: 2px solid var(--accent-color);
-  grid-column: 1 / -1;
-  max-width: 800px;
-  margin: 2rem auto;
-}
-
-.highlight-card h2 {
-  color: var(--accent-color);
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.highlight-card h2::after {
-  width: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.highlight-card ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.highlight-card li {
-  font-size: 1.2rem;
-  color: var(--text-white);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.highlight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(30, 144, 255, 0.2);
-  background: linear-gradient(135deg, rgba(30, 144, 255, 0.2), rgba(30, 144, 255, 0.1));
-}
-
-@media (max-width: 768px) {
-  .highlight-card ul {
-    grid-template-columns: 1fr;
-  }
-  
-  .highlight-card li {
-    font-size: 1.1rem;
-  }
-}
-
-/* Add subtle blue glow to cards */
-.section-card:hover {
-  box-shadow: 0 20px 40px rgba(30, 144, 255, 0.15);
-  border-color: rgba(30, 144, 255, 0.2);
-}
-
-/* Update symbol glow */
-.symbol {
-  text-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
-}
-
-/* Add ocean-like wave effect to cards */
-.section-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.section-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    transparent,
-    rgba(30, 144, 255, 0.6),
-    transparent
-  );
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.section-card:hover::before {
-  transform: translateX(100%);
-}
-
-/* Add subtle water ripple effect */
-@keyframes ripple {
-  0% { transform: scale(1); opacity: 0.4; }
-  100% { transform: scale(2); opacity: 0; }
-}
-
-.section-card:hover::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: rgba(30, 144, 255, 0.1);
-  transform: translate(-50%, -50%);
-  animation: ripple 1s ease-out;
-}
-
 .section-card.guarantee {
   background: linear-gradient(135deg, rgba(255, 0, 0, 0.15), rgba(0, 0, 255, 0.15));
   border: 2px solid #FF0000;
   box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
-  transform: scale(1.02);
 }
 
 .section-card.guarantee:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
   box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
   border-color: #0000FF;
 }
 
 .section-card.guarantee h2 {
   color: #FF0000;
-  font-size: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .section-card.guarantee ul li {
-  font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 20px;
   color: #ffffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .section-card.guarantee ul li:before {
   color: #0000FF;
-  font-size: 1.5rem;
-}
-
-/* Mobile-optimized positions */
-@media (max-width: 768px) {
-  .symbol {
-    font-size: 1.8rem;
-    opacity: 0.3;
-    animation: floatMobile 15s infinite ease-in-out;
-  }
-
-  /* Show fewer symbols on mobile */
-  .symbol:nth-child(n+7) {
-    display: none;
-  }
-
-  /* Optimize positions for remaining symbols */
-  .symbol:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-  .symbol:nth-child(2) { top: 30%; right: 15%; animation-delay: -3s; }
-  .symbol:nth-child(3) { top: 50%; left: 20%; animation-delay: -6s; }
-  .symbol:nth-child(4) { top: 70%; right: 25%; animation-delay: -9s; }
-  .symbol:nth-child(5) { top: 85%; left: 15%; animation-delay: -12s; }
-  .symbol:nth-child(6) { top: 25%; right: 10%; animation-delay: -15s; }
-
-  /* Simplified animation for better performance on mobile */
-  @keyframes floatMobile {
-    0% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    50% {
-      transform: translate(0, -10px) rotate(5deg);
-    }
-    100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {
-  .symbol {
-    font-size: 1.5rem;
-    opacity: 0.25;
-  }
-
-  /* Show even fewer symbols on very small screens */
-  .symbol:nth-child(n+5) {
-    display: none;
-  }
-
-  /* Adjust positions for better visibility */
-  .symbol:nth-child(1) { top: 15%; left: 15%; }
-  .symbol:nth-child(2) { top: 45%; right: 20%; }
-  .symbol:nth-child(3) { top: 75%; left: 25%; }
-  .symbol:nth-child(4) { top: 35%; right: 15%; }
 }
 

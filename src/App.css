@@ -47,10 +47,29 @@ body {
 .pitch-header h1 {
   font-size: 3.5rem;
   margin-bottom: 20px;
-  background: linear-gradient(45deg, #FF0000, #0000FF);
+  background: linear-gradient(45deg, 
+    #FF6666 0%, 
+    #FF6666 30%, 
+    #FFFFFF 45%, 
+    #FFFFFF 55%, 
+    #6666FF 70%, 
+    #6666FF 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 900;
+  letter-spacing: 2px;
+  animation: titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    filter: drop-shadow(0 0 2px rgba(255, 77, 77, 0.5)) drop-shadow(0 0 2px rgba(77, 77, 255, 0.5));
+  }
+  to {
+    filter: drop-shadow(0 0 6px rgba(255, 77, 77, 0.7)) drop-shadow(0 0 6px rgba(77, 77, 255, 0.7));
+  }
 }
 
 .subtitle {
@@ -134,11 +153,16 @@ body {
 
 .symbol {
   position: absolute;
-  font-size: 2rem;
+  font-size: 2.5rem;
   opacity: 0.15;
   pointer-events: none;
   animation: float 20s infinite ease-in-out;
   z-index: 0;
+  color: #FF6666;
+}
+
+.symbol:nth-child(even) {
+  color: #6666FF;
 }
 
 .symbol:hover {
@@ -160,14 +184,21 @@ body {
 }
 
 /* Position symbols at different starting points */
-.symbol:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-.symbol:nth-child(2) { top: 20%; right: 15%; animation-delay: -2s; }
-.symbol:nth-child(3) { top: 40%; left: 20%; animation-delay: -4s; }
-.symbol:nth-child(4) { top: 60%; right: 25%; animation-delay: -6s; }
-.symbol:nth-child(5) { top: 80%; left: 30%; animation-delay: -8s; }
-.symbol:nth-child(6) { top: 30%; right: 35%; animation-delay: -10s; }
-.symbol:nth-child(7) { top: 50%; left: 40%; animation-delay: -12s; }
-.symbol:nth-child(8) { top: 70%; right: 45%; animation-delay: -14s; }
+.symbol:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
+.symbol:nth-child(2) { top: 15%; right: 10%; animation-delay: -1s; }
+.symbol:nth-child(3) { top: 25%; left: 15%; animation-delay: -2s; }
+.symbol:nth-child(4) { top: 35%; right: 20%; animation-delay: -3s; }
+.symbol:nth-child(5) { top: 45%; left: 25%; animation-delay: -4s; }
+.symbol:nth-child(6) { top: 55%; right: 30%; animation-delay: -5s; }
+.symbol:nth-child(7) { top: 65%; left: 35%; animation-delay: -6s; }
+.symbol:nth-child(8) { top: 75%; right: 40%; animation-delay: -7s; }
+.symbol:nth-child(9) { top: 85%; left: 45%; animation-delay: -8s; }
+.symbol:nth-child(10) { top: 95%; right: 50%; animation-delay: -9s; }
+.symbol:nth-child(11) { top: 15%; left: 55%; animation-delay: -10s; }
+.symbol:nth-child(12) { top: 25%; right: 60%; animation-delay: -11s; }
+.symbol:nth-child(13) { top: 35%; left: 65%; animation-delay: -12s; }
+.symbol:nth-child(14) { top: 45%; right: 70%; animation-delay: -13s; }
+.symbol:nth-child(15) { top: 55%; left: 75%; animation-delay: -14s; }
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -557,38 +588,60 @@ li:hover emoji {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
 }
 
 .symbol {
   position: absolute;
-  font-size: 2rem;
-  opacity: 0.1;
+  font-size: 3rem;
+  opacity: 0.2;
   pointer-events: none;
   animation: float 20s infinite ease-in-out;
   z-index: 0;
+  color: #FF6666;
+  text-shadow: 0 0 10px rgba(255, 102, 102, 0.3);
+}
+
+.symbol:nth-child(even) {
+  color: #6666FF;
+  text-shadow: 0 0 10px rgba(102, 102, 255, 0.3);
 }
 
 .symbol:hover {
-  opacity: 0.3;
+  opacity: 0.5;
   transform: scale(1.2);
   transition: all 0.3s ease;
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
 /* Position symbols at different starting points */
-.symbol:nth-child(1) { left: 10%; animation-delay: 0s; }
-.symbol:nth-child(2) { left: 20%; animation-delay: 2s; }
-.symbol:nth-child(3) { left: 30%; animation-delay: 4s; }
-.symbol:nth-child(4) { left: 40%; animation-delay: 6s; }
-.symbol:nth-child(5) { left: 50%; animation-delay: 8s; }
-.symbol:nth-child(6) { left: 60%; animation-delay: 10s; }
-.symbol:nth-child(7) { left: 70%; animation-delay: 12s; }
-.symbol:nth-child(8) { left: 80%; animation-delay: 14s; }
-.symbol:nth-child(9) { left: 90%; animation-delay: 16s; }
-.symbol:nth-child(10) { left: 15%; animation-delay: 18s; }
-.symbol:nth-child(11) { left: 25%; animation-delay: 20s; }
-.symbol:nth-child(12) { left: 35%; animation-delay: 22s; }
+.symbol:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
+.symbol:nth-child(2) { top: 15%; right: 10%; animation-delay: -1s; }
+.symbol:nth-child(3) { top: 25%; left: 15%; animation-delay: -2s; }
+.symbol:nth-child(4) { top: 35%; right: 20%; animation-delay: -3s; }
+.symbol:nth-child(5) { top: 45%; left: 25%; animation-delay: -4s; }
+.symbol:nth-child(6) { top: 55%; right: 30%; animation-delay: -5s; }
+.symbol:nth-child(7) { top: 65%; left: 35%; animation-delay: -6s; }
+.symbol:nth-child(8) { top: 75%; right: 40%; animation-delay: -7s; }
+.symbol:nth-child(9) { top: 85%; left: 45%; animation-delay: -8s; }
+.symbol:nth-child(10) { top: 95%; right: 50%; animation-delay: -9s; }
+.symbol:nth-child(11) { top: 15%; left: 55%; animation-delay: -10s; }
+.symbol:nth-child(12) { top: 25%; right: 60%; animation-delay: -11s; }
+.symbol:nth-child(13) { top: 35%; left: 65%; animation-delay: -12s; }
+.symbol:nth-child(14) { top: 45%; right: 70%; animation-delay: -13s; }
+.symbol:nth-child(15) { top: 55%; left: 75%; animation-delay: -14s; }
 
 /* Different sizes for variety */
 .symbol:nth-child(odd) { 

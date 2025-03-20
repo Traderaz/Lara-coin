@@ -35,6 +35,13 @@ function App() {
         <span className="symbol">₿</span>
         <span className="symbol">₿</span>
         <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
       </div>
 
       <div className="pitch-header">

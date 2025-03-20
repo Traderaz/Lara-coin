@@ -100,7 +100,7 @@ body {
   color: #FF0000;
   font-size: 1.8rem;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 2px rgba(255, 0, 0, 0.2);
 }
 
 .section-card ul {
@@ -114,9 +114,10 @@ body {
   margin-bottom: 15px;
   padding-left: 25px;
   position: relative;
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 1.1rem;
   line-height: 1.6;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .section-card ul li:before {
@@ -156,9 +157,9 @@ body {
 .symbol {
   position: absolute;
   font-size: 3rem;
-  opacity: 0.2;
+  opacity: 0.3;
   pointer-events: none;
-  animation: float 20s infinite ease-in-out;
+  animation: float 6s infinite ease-in-out;
   z-index: 0;
   color: #FF0000;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
@@ -231,7 +232,7 @@ body {
   .symbol {
     font-size: 1.8rem;
     opacity: 0.3;
-    animation: floatMobile 15s infinite ease-in-out;
+    animation: floatMobile 4s infinite ease-in-out;
   }
 
   /* Show fewer symbols on mobile */
@@ -253,7 +254,7 @@ body {
       transform: translate(0, 0) rotate(0deg);
     }
     50% {
-      transform: translate(0, -10px) rotate(5deg);
+      transform: translate(0, -15px) rotate(3deg);
     }
     100% {
       transform: translate(0, 0) rotate(0deg);
@@ -285,7 +286,7 @@ body {
 
   .symbol {
     font-size: 1.5rem;
-    opacity: 0.25;
+    opacity: 0.3;
   }
 
   /* Show even fewer symbols on very small screens */
@@ -394,18 +395,18 @@ ul ul {
 
 li {
   margin-bottom: 1.2rem;
-  color: var(--text-gray);
+  color: #FFFFFF;
   font-size: 1rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .section-card:hover li {
-  color: var(--accent-color);
+  color: #FFFFFF;
 }
 
 li:hover {
   transform: translateX(5px);
-  color: var(--accent-color);
+  color: #FF0000;
 }
 
 /* Animations */

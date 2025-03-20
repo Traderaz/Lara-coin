@@ -26,30 +26,27 @@ function App() {
   return (
     <div className="App">
       <div className="floating-symbols">
-        {/* Crypto & Music Symbols */}
+        {/* Bitcoin Symbols */}
         <span className="symbol">₿</span>
-        <span className="symbol">Ξ</span>
-        <span className="symbol">₮</span>
-        <span className="symbol">Ł</span>
-        <span className="symbol">♪</span>
-        <span className="symbol">♫</span>
-        <span className="symbol">2</span>
-        <span className="symbol">⛓️</span>
-        <span className="symbol">$</span>
-        <span className="symbol">♯</span>
-        <span className="symbol">♭</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
+        <span className="symbol">₿</span>
       </div>
 
       <div className="pitch-header">
-        <h1>2CHAINZ TOKEN</h1>
-        <p className="subtitle">The Ultimate Hip-Hop/Rap Meets Crypto Revolution</p>
+        <h1>LARA TRUMP TOKEN</h1>
+        <p className="subtitle">The Ultimate Crypto Revolution</p>
       </div>
 
       <div className="executive-summary">
         <div className="section-card summary">
           <h2>EXECUTIVE SUMMARY</h2>
-          <p>A ground breaking cryptocurrency that combines 2Chainz's entrepreneurial success with blockchain innovation, 
-             creating a unique ecosystem where fans can participate in the future of music and digital finance.</p>
+          <p>A groundbreaking cryptocurrency that combines Lara Trump's political influence with blockchain innovation, 
+             creating a unique ecosystem where supporters can participate in the future of digital finance.</p>
         </div>
       </div>
 
@@ -57,86 +54,56 @@ function App() {
         <div className="section-card vision">
           <h2>THE BIG IDEA</h2>
           <ul>
-            <li>🎵 First hip-hop/rap icon-backed crypto token</li>
-            <li>🌍 Bridges hip-hop/rap culture and decentralized finance</li>
-            <li>💰 Empowers global fans with exclusive 2Chainz experiences</li>
+            <li>Lara Trump official memecoin on Solana</li>
+            <li>Bridging the political world on chain</li>
+            <li>Rallying people who believe in decentralised power and freedom through Web 3</li>
           </ul>
         </div>
 
         <div className="section-card strategy">
           <h2>MARKET STRATEGIES</h2>
           <ul>
-            <li>🔥 Tease & Hype: 2Chainz announces "True to crypto, true to hip-hop/rap"</li>
-            <li>📈 Liquidity Lock: Ensuring price stability and investor confidence</li>
-            <li>💬 Community-Driven: Exclusive Discord & Telegram communities</li>
-            <li>📱 Viral Platforms: Leveraging Instagram, TikTok & X for massive reach</li>
+            <li>Custom Meteora launch</li>
+            <li>Majority of tokens vested/locked over a 1 year period to ensure market confidence</li>
+            <li>Low circulating supply to push price</li>
+            <li>Moonshot and exchange listings to increase volume</li>
+            <li>Full in house Dev team nothing will be outsourced</li>
           </ul>
         </div>
 
         <div className="section-card revenue">
           <h2>REVENUE POTENTIAL</h2>
           <ul>
-            <li>🏦 DEX Market Maker: Building a sustainable token economy</li>
-            <li>📊 Growth Strategy: Fan engagement drives token value</li>
-            <li>💸 Token Utility: Access to exclusive merch, events & content</li>
-          </ul>
-        </div>
-
-        <div className="section-card partnerships">
-          <h2>PARTNERSHIPS & COLLABORATIONS</h2>
-          <ul>
-            <li>💎 Strategic Investors: Leading crypto & entertainment firms</li>
-            <li>🎨 Entertainment Integration: Events, festivals & media</li>
+            <li>In House Market Makers: Building a sustainable token economy</li>
+            <li>Growth Strategy: Supporter engagement drives token value</li>
           </ul>
         </div>
 
         <div className="section-card deliverables">
           <h2>KEY DELIVERABLES</h2>
           <ul>
-            <li>⏳ Pre-Launch:</li>
-            <ul>
-              <li>• 2Chainz announcement: "Blockchain got me feeling blessed"</li>
-              <li>• Influencer campaign with hip-hop/rap community leaders</li>
-            </ul>
-            <li>🚀 Launch Day:</li>
-            <ul>
-              <li>• Global announcement across all platforms</li>
-              <li>• Exclusive fan rewards activation</li>
-            </ul>
-            <li>📢 Post-Launch:</li>
-            <ul>
-              <li>• Regular community events & token holder benefits</li>
-              <li>• Exclusive access to new content & merchandise</li>
-            </ul>
-          </ul>
-        </div>
-
-        <div className="section-card viral">
-          <h2>VIRAL STRATEGY</h2>
-          <ul>
-            <li>📣 #2ChainzToken: The official launch hashtag</li>
-            <li>🔥 Rap Challenge: Community-driven engagement campaign</li>
-            <li>🎥 Premium Content: High-quality visuals & exclusive drops</li>
+            <li>Lara needs to post on all social media platforms including her website embracing the fact it is her official token on launch day</li>
+            <li>Bi weekly support on social media post launch</li>
           </ul>
         </div>
 
         <div className="section-card market-opportunity">
           <h2>MARKET OPPORTUNITY</h2>
           <ul>
-            <li>🎯 Combined Market Potential:</li>
+            <li>Combined Market Potential:</li>
             <li>• Global Cryptocurrency Market: $2T+</li>
-            <li>• Hip-Hop/Rap Industry: $15.7B+</li>
+            <li>• Political Market: $15.7B+</li>
             <li>• Digital Collectibles: $31B</li>
-            <li>• Rap Streaming Market: $3B+</li>
+            <li>• Political Streaming Market: $3B+</li>
           </ul>
         </div>
 
-        <div className="section-card next-steps">
-          <h2>NEXT STEPS</h2>
+        <div className="section-card guarantee">
+          <h2>OUR GUARANTEE</h2>
           <ul>
-            <li>🎨 Finalize Brand Identity: Align with 2Chainz's iconic style</li>
-            <li>📄 Develop Platform & Whitepaper: Clear roadmap & utility</li>
-            <li>📢 Launch Strategy: Coordinated PR & entertainment industry push</li>
+            <li>$750,000 USD</li>
+            <li>50% Revenue Share Backend</li>
+            <li>2% Personal Supply for Lara</li>
           </ul>
         </div>
       </div>

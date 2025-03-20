@@ -424,7 +424,35 @@ li:hover {
   }
 
   .symbol {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: 1.8rem;
+    opacity: 0.3;
+    animation: floatMobile 15s infinite ease-in-out;
+  }
+
+  /* Show fewer symbols on mobile */
+  .symbol:nth-child(n+7) {
+    display: none;
+  }
+
+  /* Optimize positions for remaining symbols */
+  .symbol:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+  .symbol:nth-child(2) { top: 30%; right: 15%; animation-delay: -3s; }
+  .symbol:nth-child(3) { top: 50%; left: 20%; animation-delay: -6s; }
+  .symbol:nth-child(4) { top: 70%; right: 25%; animation-delay: -9s; }
+  .symbol:nth-child(5) { top: 85%; left: 15%; animation-delay: -12s; }
+  .symbol:nth-child(6) { top: 25%; right: 10%; animation-delay: -15s; }
+
+  /* Simplified animation for better performance on mobile */
+  @keyframes floatMobile {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(0, -10px) rotate(5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
   }
 
   .highlight-card {
@@ -828,116 +856,55 @@ li:hover emoji {
 
 /* Mobile-optimized positions */
 @media (max-width: 768px) {
-  .App {
-    padding: 15px;
-  }
-
-  .pitch-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-  }
-
-  .section-card {
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-
-  .section-card h2 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-  }
-
-  .section-card ul li {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    padding-left: 20px;
-  }
-
-  .symbol {
-    font-size: 2rem;
-    opacity: 0.25;
-  }
-
-  /* Adjust symbol positions for mobile */
-  .symbol:nth-child(1) { top: 2%; left: 5%; }
-  .symbol:nth-child(2) { top: 15%; right: 8%; }
-  .symbol:nth-child(3) { top: 28%; left: 12%; }
-  .symbol:nth-child(4) { top: 42%; right: 15%; }
-  .symbol:nth-child(5) { top: 55%; left: 8%; }
-  .symbol:nth-child(6) { top: 68%; right: 10%; }
-  .symbol:nth-child(7) { top: 82%; left: 15%; }
-  .symbol:nth-child(8) { top: 95%; right: 12%; }
-  .symbol:nth-child(9) { display: none; }
-  .symbol:nth-child(10) { display: none; }
-  .symbol:nth-child(11) { display: none; }
-  .symbol:nth-child(12) { display: none; }
-  .symbol:nth-child(13) { display: none; }
-  .symbol:nth-child(14) { display: none; }
-  .symbol:nth-child(15) { display: none; }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-  .App {
-    padding: 10px;
-  }
-
-  .pitch-header h1 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-
-  .section-card {
-    padding: 12px;
-    margin-bottom: 15px;
-  }
-
-  .section-card h2 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-  }
-
-  .section-card ul li {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-    padding-left: 18px;
-  }
-
   .symbol {
     font-size: 1.8rem;
     opacity: 0.3;
+    animation: floatMobile 15s infinite ease-in-out;
   }
 
-  /* Adjust symbol positions for small mobile */
-  .symbol:nth-child(1) { top: 5%; left: 8%; }
-  .symbol:nth-child(2) { top: 20%; right: 10%; }
-  .symbol:nth-child(3) { top: 35%; left: 15%; }
-  .symbol:nth-child(4) { top: 50%; right: 12%; }
-  .symbol:nth-child(5) { top: 65%; left: 10%; }
-  .symbol:nth-child(6) { top: 80%; right: 15%; }
-  .symbol:nth-child(7) { display: none; }
-  .symbol:nth-child(8) { display: none; }
+  /* Show fewer symbols on mobile */
+  .symbol:nth-child(n+7) {
+    display: none;
+  }
+
+  /* Optimize positions for remaining symbols */
+  .symbol:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+  .symbol:nth-child(2) { top: 30%; right: 15%; animation-delay: -3s; }
+  .symbol:nth-child(3) { top: 50%; left: 20%; animation-delay: -6s; }
+  .symbol:nth-child(4) { top: 70%; right: 25%; animation-delay: -9s; }
+  .symbol:nth-child(5) { top: 85%; left: 15%; animation-delay: -12s; }
+  .symbol:nth-child(6) { top: 25%; right: 10%; animation-delay: -15s; }
+
+  /* Simplified animation for better performance on mobile */
+  @keyframes floatMobile {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(0, -10px) rotate(5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0) rotate(0deg);
+/* Extra small devices */
+@media (max-width: 480px) {
+  .symbol {
+    font-size: 1.5rem;
+    opacity: 0.25;
   }
-  50% {
-    transform: translateY(-15px) rotate(5deg);
+
+  /* Show even fewer symbols on very small screens */
+  .symbol:nth-child(n+5) {
+    display: none;
   }
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
+
+  /* Adjust positions for better visibility */
+  .symbol:nth-child(1) { top: 15%; left: 15%; }
+  .symbol:nth-child(2) { top: 45%; right: 20%; }
+  .symbol:nth-child(3) { top: 75%; left: 25%; }
+  .symbol:nth-child(4) { top: 35%; right: 15%; }
 }
 
